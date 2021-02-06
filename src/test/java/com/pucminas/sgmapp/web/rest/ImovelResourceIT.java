@@ -31,8 +31,8 @@ import com.pucminas.sgmapp.domain.enumeration.TipoImovel;
 @WithMockUser
 public class ImovelResourceIT {
 
-    private static final String DEFAULT_NUMERO_CADASTRO = "AAAAAAAAAA";
-    private static final String UPDATED_NUMERO_CADASTRO = "BBBBBBBBBB";
+    private static final Integer DEFAULT_NUMERO_CADASTRO = 1;
+    private static final Integer UPDATED_NUMERO_CADASTRO = 2;
 
     private static final Integer DEFAULT_LARGURA = 1;
     private static final Integer UPDATED_LARGURA = 2;

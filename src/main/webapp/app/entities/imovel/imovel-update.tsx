@@ -86,10 +86,12 @@ export const ImovelUpdate = (props: IImovelUpdateProps) => {
                 </Label>
                 <AvField
                   id="imovel-numeroCadastro"
-                  type="text"
+                  type="string"
+                  className="form-control"
                   name="numeroCadastro"
                   validate={{
                     required: { value: true, errorMessage: translate('entity.validation.required') },
+                    number: { value: true, errorMessage: translate('entity.validation.number') },
                   }}
                 />
               </AvGroup>

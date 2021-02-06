@@ -4,7 +4,7 @@ import { TipoImovel } from 'app/shared/model/enumerations/tipo-imovel.model';
 
 export interface IImovel {
   id?: number;
-  numeroCadastro?: string;
+  numeroCadastro?: number;
   largura?: number;
   comprimento?: number;
   area?: number;

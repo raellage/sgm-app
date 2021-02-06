@@ -10,7 +10,7 @@ enum StatusDebito {
 }
 
 entity Imovel {
-	numeroCadastro String required unique
+    numeroCadastro Integer required unique
     largura Integer
     comprimento Integer
     area Integer
@@ -40,14 +40,6 @@ entity Endereco {
 entity Pessoa {
 	cpf String required unique,
 	nomeCompleto String required
-}
-
-entity User {
-	profile UserProfile
-}
-
-enum UserProfile {
-	ADMINISTRADOR, SERVIDOR_PUBLICO, PRESTADOR, CIDADAO
 }
 
 relationship OneToOne {

@@ -15,7 +15,7 @@
             <column name="id" type="bigint">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="numero_cadastro" type="varchar(255)">
+            <column name="numero_cadastro" type="integer">
                 <constraints nullable="false" unique="true" uniqueConstraintName="ux_imovel_numero_cadastro" />
             </column>
             <column name="largura" type="integer">
@@ -65,7 +65,7 @@
                   separator=";"
                   tableName="imovel">
             <column name="id" type="numeric"/>
-            <column name="numero_cadastro" type="string"/>
+            <column name="numero_cadastro" type="numeric"/>
             <column name="largura" type="numeric"/>
             <column name="comprimento" type="numeric"/>
             <column name="area" type="numeric"/>

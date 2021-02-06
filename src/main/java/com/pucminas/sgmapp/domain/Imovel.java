@@ -29,7 +29,7 @@ public class Imovel implements Serializable {
 
     @NotNull
     @Column(name = "numero_cadastro", nullable = false, unique = true)
-    private String numeroCadastro;
+    private Integer numeroCadastro;
 
     @Column(name = "largura")
     private Integer largura;
@@ -67,16 +67,16 @@ public class Imovel implements Serializable {
         this.id = id;
     }
 
-    public String getNumeroCadastro() {
+    public Integer getNumeroCadastro() {
         return numeroCadastro;
     }
 
-    public Imovel numeroCadastro(String numeroCadastro) {
+    public Imovel numeroCadastro(Integer numeroCadastro) {
         this.numeroCadastro = numeroCadastro;
         return this;
     }
 
-    public void setNumeroCadastro(String numeroCadastro) {
+    public void setNumeroCadastro(Integer numeroCadastro) {
         this.numeroCadastro = numeroCadastro;
     }
 
@@ -206,7 +206,7 @@ public class Imovel implements Serializable {
     public String toString() {
         return "Imovel{" +
             "id=" + getId() +
-            ", numeroCadastro='" + getNumeroCadastro() + "'" +
+            ", numeroCadastro=" + getNumeroCadastro() +
             ", largura=" + getLargura() +
             ", comprimento=" + getComprimento() +
             ", area=" + getArea() +
