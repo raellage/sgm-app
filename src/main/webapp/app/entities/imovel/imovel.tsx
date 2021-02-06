@@ -63,6 +63,9 @@ export const Imovel = (props: IImovelProps) => {
                 <th>
                   <Translate contentKey="sgmApp.imovel.endereco">Endereco</Translate>
                 </th>
+                <th>
+                  <Translate contentKey="sgmApp.imovel.pessoa">Pessoa</Translate>
+                </th>
                 <th />
               </tr>
             </thead>
@@ -87,6 +90,7 @@ export const Imovel = (props: IImovelProps) => {
                   <td>{imovel.latitude}</td>
                   <td>{imovel.longitude}</td>
                   <td>{imovel.endereco ? <Link to={`endereco/${imovel.endereco.id}`}>{imovel.endereco.cep}</Link> : ''}</td>
+                  <td>{imovel.pessoa ? <Link to={`pessoa/${imovel.pessoa.id}`}>{imovel.pessoa.cpf}</Link> : ''}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${imovel.id}`} color="info" size="sm">

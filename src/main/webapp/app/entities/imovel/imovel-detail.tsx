@@ -77,6 +77,10 @@ export const ImovelDetail = (props: IImovelDetailProps) => {
             <Translate contentKey="sgmApp.imovel.endereco">Endereco</Translate>
           </dt>
           <dd>{imovelEntity.endereco ? imovelEntity.endereco.cep : ''}</dd>
+          <dt>
+            <Translate contentKey="sgmApp.imovel.pessoa">Pessoa</Translate>
+          </dt>
+          <dd>{imovelEntity.pessoa ? imovelEntity.pessoa.cpf : ''}</dd>
         </dl>
         <Button tag={Link} to="/imovel" replace color="info">
           <FontAwesomeIcon icon="arrow-left" />{' '}

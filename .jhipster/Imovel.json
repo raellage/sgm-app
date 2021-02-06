@@ -48,6 +48,13 @@
       "relationshipName": "endereco",
       "otherEntityField": "cep",
       "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "pessoa",
+      "otherEntityRelationshipName": "imovel",
+      "relationshipName": "pessoa",
+      "otherEntityField": "cpf"
     }
   ],
   "changelogDate": "20210203003756",

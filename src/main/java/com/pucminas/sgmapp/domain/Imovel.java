@@ -1,5 +1,6 @@
 package com.pucminas.sgmapp.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -57,6 +58,10 @@ public class Imovel implements Serializable {
     @OneToOne
     @JoinColumn(unique = true)
     private Endereco endereco;
+
+    @ManyToOne
+    @JsonIgnoreProperties(value = "imovels", allowSetters = true)
+    private Pessoa pessoa;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -182,6 +187,19 @@ public class Imovel implements Serializable {
 
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
+    }
+
+    public Pessoa getPessoa() {
+        return pessoa;
+    }
+
+    public Imovel pessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
+        return this;
+    }
+
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 

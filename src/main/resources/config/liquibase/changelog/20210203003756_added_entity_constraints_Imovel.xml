@@ -14,5 +14,11 @@
                                  referencedColumnNames="id"
                                  referencedTableName="endereco"/>
 
+        <addForeignKeyConstraint baseColumnNames="pessoa_id"
+                                 baseTableName="imovel"
+                                 constraintName="fk_imovel_pessoa_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pessoa"/>
+
     </changeSet>
 </databaseChangeLog>

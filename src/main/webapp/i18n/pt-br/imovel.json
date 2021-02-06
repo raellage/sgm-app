@@ -24,7 +24,8 @@
       "tipo": "Tipo",
       "latitude": "Latitude",
       "longitude": "Longitude",
-      "endereco": "Endereco"
+      "endereco": "Endereco",
+      "pessoa": "Pessoa"
     }
   }
 }

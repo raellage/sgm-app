@@ -9,6 +9,8 @@ import { IRootState } from 'app/shared/reducers';
 
 import { IEndereco } from 'app/shared/model/endereco.model';
 import { getEntities as getEnderecos } from 'app/entities/endereco/endereco.reducer';
+import { IPessoa } from 'app/shared/model/pessoa.model';
+import { getEntities as getPessoas } from 'app/entities/pessoa/pessoa.reducer';
 import { getEntity, updateEntity, createEntity, reset } from './imovel.reducer';
 import { IImovel } from 'app/shared/model/imovel.model';
 import { convertDateTimeFromServer, convertDateTimeToServer, displayDefaultDateTime } from 'app/shared/util/date-utils';
@@ -18,9 +20,10 @@ export interface IImovelUpdateProps extends StateProps, DispatchProps, RouteComp
 
 export const ImovelUpdate = (props: IImovelUpdateProps) => {
   const [enderecoId, setEnderecoId] = useState('0');
+  const [pessoaId, setPessoaId] = useState('0');
   const [isNew, setIsNew] = useState(!props.match.params || !props.match.params.id);
 
-  const { imovelEntity, enderecos, loading, updating } = props;
+  const { imovelEntity, enderecos, pessoas, loading, updating } = props;
 
   const handleClose = () => {
     props.history.push('/imovel');
@@ -34,6 +37,7 @@ export const ImovelUpdate = (props: IImovelUpdateProps) => {
     }
 
     props.getEnderecos();
+    props.getPessoas();
   }, []);
 
   useEffect(() => {
@@ -171,6 +175,21 @@ export const ImovelUpdate = (props: IImovelUpdateProps) => {
                     : null}
                 </AvInput>
               </AvGroup>
+              <AvGroup>
+                <Label for="imovel-pessoa">
+                  <Translate contentKey="sgmApp.imovel.pessoa">Pessoa</Translate>
+                </Label>
+                <AvInput id="imovel-pessoa" type="select" className="form-control" name="pessoa.id">
+                  <option value="" key="0" />
+                  {pessoas
+                    ? pessoas.map(otherEntity => (
+                        <option value={otherEntity.id} key={otherEntity.id}>
+                          {otherEntity.cpf}
+                        </option>
+                      ))
+                    : null}
+                </AvInput>
+              </AvGroup>
               <Button tag={Link} id="cancel-save" to="/imovel" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />
                 &nbsp;
@@ -194,6 +213,7 @@ export const ImovelUpdate = (props: IImovelUpdateProps) => {
 
 const mapStateToProps = (storeState: IRootState) => ({
   enderecos: storeState.endereco.entities,
+  pessoas: storeState.pessoa.entities,
   imovelEntity: storeState.imovel.entity,
   loading: storeState.imovel.loading,
   updating: storeState.imovel.updating,
@@ -202,6 +222,7 @@ const mapStateToProps = (storeState: IRootState) => ({
 
 const mapDispatchToProps = {
   getEnderecos,
+  getPessoas,
   getEntity,
   updateEntity,
   createEntity,

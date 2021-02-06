@@ -10,7 +10,7 @@ enum StatusDebito {
 }
 
 entity Imovel {
-    numeroCadastro Integer required unique
+ 	numeroCadastro Integer required unique
     largura Integer
     comprimento Integer
     area Integer
@@ -56,4 +56,8 @@ relationship OneToOne {
 
 relationship ManyToOne {
 	Debito{imovel(numeroCadastro)} to Imovel 
+}
+
+relationship ManyToOne {
+	Imovel{pessoa(cpf)} to Pessoa 
 }
