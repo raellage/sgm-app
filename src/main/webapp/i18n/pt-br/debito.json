@@ -1,0 +1,25 @@
+{
+  "sgmApp": {
+    "debito": {
+      "home": {
+        "title": "Debitos",
+        "createLabel": "Criar novo Debito",
+        "createOrEditLabel": "Criar ou editar Debito",
+        "notFound": "Nenhum Debito encontrado"
+      },
+      "created": "Um novo Debito foi criado com o identificador {{ param }}",
+      "updated": "Um Debito foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Debito foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Debito {{ id }}?"
+      },
+      "detail": {
+        "title": "Debito"
+      },
+      "anoReferencia": "Ano Referencia",
+      "valor": "Valor",
+      "status": "Status",
+      "imovel": "Imovel"
+    }
+  }
+}

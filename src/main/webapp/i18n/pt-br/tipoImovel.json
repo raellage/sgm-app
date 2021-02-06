@@ -1,0 +1,10 @@
+{
+  "sgmApp": {
+    "TipoImovel": {
+      "null": "",
+      "CASA": "CASA",
+      "APARTAMENTO": "APARTAMENTO",
+      "TERRENO": "TERRENO"
+    }
+  }
+}

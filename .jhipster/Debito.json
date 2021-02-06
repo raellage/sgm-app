@@ -1,0 +1,44 @@
+{
+  "name": "Debito",
+  "fields": [
+    {
+      "fieldName": "anoReferencia",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "valor",
+      "fieldType": "Float",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "StatusDebito",
+      "fieldValues": "PENDENTE,PAGO"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "imovel",
+      "otherEntityRelationshipName": "debito",
+      "relationshipName": "imovel",
+      "otherEntityField": "numeroCadastro"
+    }
+  ],
+  "changelogDate": "20210203003656",
+  "entityTableName": "debito",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

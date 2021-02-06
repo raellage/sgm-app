@@ -1,0 +1,67 @@
+
+entity Debito {
+	anoReferencia Integer required
+    valor Float required    
+    status StatusDebito
+}
+
+enum StatusDebito {
+    PENDENTE, PAGO
+}
+
+entity Imovel {
+	numeroCadastro String required unique
+    largura Integer
+    comprimento Integer
+    area Integer
+    zona ZonaImovel
+    tipo TipoImovel
+    latitude String
+    longitude String
+}
+
+enum ZonaImovel {
+    RURAL, URBANA
+}
+
+enum TipoImovel {
+   CASA, APARTAMENTO, TERRENO
+}
+
+entity Endereco {
+	cep String required
+    cidade String required
+    bairro String required
+    logradouro String required
+    numero Integer required
+    complemento String
+}
+
+entity Pessoa {
+	cpf String required unique,
+	nomeCompleto String required
+}
+
+entity User {
+	profile UserProfile
+}
+
+enum UserProfile {
+	ADMINISTRADOR, SERVIDOR_PUBLICO, PRESTADOR, CIDADAO
+}
+
+relationship OneToOne {
+	Imovel{endereco(cep)} to Endereco
+}
+
+relationship OneToOne {
+	Pessoa{endereco(cep)} to Endereco
+}
+
+relationship OneToOne {
+  	Pessoa{user(login)} to User
+}
+
+relationship ManyToOne {
+	Debito{imovel(numeroCadastro)} to Imovel 
+}

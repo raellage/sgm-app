@@ -1,0 +1,9 @@
+{
+  "sgmApp": {
+    "StatusDebito": {
+      "null": "",
+      "PENDENTE": "PENDENTE",
+      "PAGO": "PAGO"
+    }
+  }
+}

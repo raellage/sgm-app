@@ -1,0 +1,64 @@
+{
+  "name": "Imovel",
+  "fields": [
+    {
+      "fieldName": "numeroCadastro",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "unique"
+      ]
+    },
+    {
+      "fieldName": "largura",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "comprimento",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "area",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "zona",
+      "fieldType": "ZonaImovel",
+      "fieldValues": "RURAL,URBANA"
+    },
+    {
+      "fieldName": "tipo",
+      "fieldType": "TipoImovel",
+      "fieldValues": "CASA,APARTAMENTO,TERRENO"
+    },
+    {
+      "fieldName": "latitude",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "longitude",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "endereco",
+      "otherEntityRelationshipName": "imovel",
+      "relationshipName": "endereco",
+      "otherEntityField": "cep",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20210203003756",
+  "entityTableName": "imovel",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
